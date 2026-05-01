@@ -1,119 +1,133 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;500;800&display=swap');
+/* Vibrant & Soulful Design System 2026
+   Theme: Dopamine Brights & Glassmorphism
+*/
 
 :root {
-    --accent: #d4af37;
-    --bg: #050505;
-    --card: rgba(255, 255, 255, 0.03);
-    --glass: rgba(10, 10, 10, 0.85);
-    --border: rgba(255, 255, 255, 0.1);
+    --primary: #ff007a;          /* Neon Pink */
+    --secondary: #00d4ff;         /* Electric Blue */
+    --accent: #f8ff00;            /* Cyber Yellow */
+    --bg-gradient: linear-gradient(135deg, #6e8efb, #a777e3);
+    --glass: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
-
-* { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
 
 body {
-    background-color: var(--bg);
-    color: #f1f1f1;
-    font-family: 'Inter', sans-serif;
-    line-height: 1.8;
-    overflow-x: hidden;
-}
-
-/* Stunning Floating App Nav */
-nav {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--glass);
-    backdrop-filter: blur(25px);
-    border: 1px solid var(--border);
-    padding: 10px 30px;
-    border-radius: 100px;
-    display: flex;
-    gap: 20px;
-    z-index: 1000;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.8);
-    width: max-content;
-    max-width: 95%;
-    overflow-x: auto;
-}
-
-nav a {
-    color: #999;
-    text-decoration: none;
-    font-size: 10px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-nav a:hover { color: var(--accent); transform: translateY(-2px); }
-
-/* Cinematic Article Hero */
-.hero {
-    height: 85vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
-    background-position: center;
+    background: var(--bg-gradient);
     background-attachment: fixed;
-    position: relative;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    min-height: 100vh;
 }
 
-.hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(0deg, var(--bg) 0%, transparent 100%);
+/* The Soulful Container - Glassmorphism Effect */
+.card {
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    padding: 2.5rem;
+    margin: 20px auto;
+    max-width: 900px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
 }
 
-.hero-text {
-    position: relative;
-    z-index: 10;
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
+}
+
+/* Typography with Soul */
+h1, h2, h3 {
+    text-shadow: var(--text-shadow);
+    letter-spacing: -0.5px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, #fff, var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Vibrant Interactive Elements */
+.btn-vibrant {
+    background: linear-gradient(45deg, var(--primary), var(--accent));
+    border: none;
+    padding: 15px 35px;
+    border-radius: 50px;
+    color: #000;
+    font-weight: 800;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 0, 122, 0.4);
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-vibrant:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 0, 122, 0.6);
+    filter: brightness(1.1);
+}
+
+/* Navigation Links */
+nav {
+    padding: 20px;
     text-align: center;
 }
 
-.hero-text h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(4rem, 15vw, 10rem);
-    line-height: 0.8;
-    font-style: italic;
-    color: #fff;
-    margin-bottom: 10px;
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
 }
 
-/* Premium App Content Container */
-.content-wrapper {
-    max-width: 1000px;
-    margin: -150px auto 100px;
-    background: rgba(10, 10, 10, 0.6);
-    backdrop-filter: blur(40px);
-    padding: clamp(2rem, 10vw, 6rem);
-    border-radius: 60px;
-    border: 1px solid var(--border);
-    position: relative;
-    z-index: 20;
-    box-shadow: 0 50px 100px rgba(0,0,0,0.5);
-}
-
-.meta { color: var(--accent); font-weight: 800; letter-spacing: 5px; text-transform: uppercase; font-size: 12px; margin-bottom: 20px; display: block; }
-
-.drop-cap::first-letter {
-    font-family: 'DM Serif Display', serif;
-    float: left;
-    font-size: 8rem;
-    line-height: 0.7;
-    padding: 10px 25px 0 0;
+nav a:hover {
     color: var(--accent);
 }
 
-h2 { font-family: 'DM Serif Display', serif; font-size: 3.5rem; margin: 60px 0 20px; font-style: italic; color: #fff; }
+/* Article Styling for War.html */
+article p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+}
 
-p { font-size: 1.25rem; color: #ccc; margin-bottom: 30px; font-weight: 300; text-align: justify; }
+blockquote {
+    border-left: 6px solid var(--primary);
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0 15px 15px 0;
+    font-style: italic;
+    margin: 2rem 0;
+}
 
-/* Desktop Sidebar Grid */
-@media (min-width: 1200px) {
-    .main-grid { display: grid; grid-template-columns: 1fr 300px; gap: 50px; }
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+}
+
+li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
 }
